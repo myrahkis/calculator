@@ -1,10 +1,10 @@
 import Numbers from "./Numbers";
 import Operations from "./Operations";
+import styles from "./buttons.module.css";
 
 function Buttons() {
     return (
-      <div>
-        <p>История</p>
+      <div className={styles['container']}>
         <Operations />
         <Numbers />
       </div>

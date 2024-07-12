@@ -1,0 +1,18 @@
+.operations-btns {
+  display: grid;
+  grid-column: 2 / -1;
+  grid-row: 1 / -1;
+  grid-template-columns: repeat(2, 8rem);
+  grid-template-row: repeat(5, 8rem);
+  /* border: 1px solid black; */
+}
+
+.result {
+    grid-column: 2 / -1;
+    grid-row: 4 / 6;
+    background-color:brown;
+}
+
+p {
+    border: 1px solid black;
+}

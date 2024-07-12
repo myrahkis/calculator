@@ -4,7 +4,24 @@
   padding: 0;
 }
 
-html, body {
+:root {
+  --lightest-color: #f2fcf2;
+  --main-color: #16722f;
+  --emphasis-color: #9999cc;
+  --just-in-case-color: #749a76;
+}
+
+html {
+  font-size: 65%;
+  /* font */
+}
+
+body {
   height: 100vh;
-  background-color: #16722f;
+  font-size: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--main-color);
+  color: var(--lightest-color);
 }
