@@ -3,17 +3,15 @@ import { useContext } from "react";
 import { useState } from "react";
 import { createContext } from "react";
 
-const ButtonsContext = createContext();
+const CalculatorContext = createContext();
 
-function ButtonsProvider({ children }) {
+function CalculatorProvider({ children }) {
   const [result, setResult] = useState("0");
   const [history, setHistory] = useState("");
   const [selectedNum, setSelectedNum] = useState("");
   const [nextNum, setNextNum] = useState("");
   const [selectedOperator, setSelectedOperator] = useState(""); // сделать стиль для выделения выбранного
   const [isOperatorSelected, setIsOperatorSelected] = useState(false);
-
-  //   const numsLength = selectedNums.length;
 
   function сlearEntryHandle() {
     setSelectedNum("");
@@ -103,7 +101,7 @@ function ButtonsProvider({ children }) {
   }
 
   return (
-    <ButtonsContext.Provider
+    <CalculatorContext.Provider
       value={{
         result,
         history,
@@ -118,17 +116,17 @@ function ButtonsProvider({ children }) {
       }}
     >
       {children}
-    </ButtonsContext.Provider>
+    </CalculatorContext.Provider>
   );
 }
 
-function useButtons() {
-  const context = useContext(ButtonsContext);
+function useCalculator() {
+  const context = useContext(CalculatorContext);
 
   if (context === undefined)
-    throw new Error("ButtonsContext был исп за пределами ButtonsProvider!");
+    throw new Error("CalculatorContext был исп за пределами CalculatorProvider!");
 
   return context;
 }
 
-export { ButtonsProvider, useButtons };
+export { CalculatorProvider, useCalculator };

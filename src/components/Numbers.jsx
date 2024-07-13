@@ -1,9 +1,10 @@
-import { useButtons } from "../context/ButtonsContext";
 import styles from "./numbers.module.css";
+import { useCalculator } from "../context/CalculatorContext";
 
 function Numbers() {
   const { numberClickHandle, deleteHandle, clearHandle, сlearEntryHandle } =
-    useButtons();
+    useCalculator();
+
   return (
     <div className={styles["numbers-btns"]}>
       <button onClick={deleteHandle}>←</button>

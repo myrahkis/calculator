@@ -1,9 +1,9 @@
 import styles from "./screen.module.css";
 import timeSvg from "../assets/time-svgrepo.svg";
-import { useButtons } from "../context/ButtonsContext";
+import { useCalculator } from "../context/CalculatorContext";
 
 function Screen() {
-  const { result, history, selectedNum } = useButtons();
+  const { result, history, selectedNum } = useCalculator();
 
   return (
     <div className={styles["container"]}>
@@ -11,9 +11,9 @@ function Screen() {
         <p className={styles["calculations"]}>{history}</p>
         <div className={styles["info-wrapper"]}>
           <p>{selectedNum ? selectedNum : result}</p>
-          <button>
+          {/* <button>
             <img src={timeSvg} alt="history" />
-          </button>
+          </button> */}
         </div>
       </div>
       <hr />

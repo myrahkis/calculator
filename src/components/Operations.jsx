@@ -1,57 +1,33 @@
-import { useButtons } from "../context/ButtonsContext";
 import styles from "./operations.module.css";
+import { useCalculator } from "../context/CalculatorContext";
 
 function Operations() {
-  const { operationClickHandle, calculate } = useButtons();
+  const { operationClickHandle, calculate } = useCalculator();
 
   return (
     <div className={styles["operations-btns"]}>
-      <button
-        onClick={operationClickHandle}
-        className={styles["negate"]}
-      >
+      <button onClick={operationClickHandle} className={styles["negate"]}>
         ±
       </button>
-      <button
-        onClick={operationClickHandle}
-        className={styles["divide"]}
-      >
+      <button onClick={operationClickHandle} className={styles["divide"]}>
         /
       </button>
-      <button
-        onClick={operationClickHandle}
-        className={styles["multiply"]}
-      >
+      <button onClick={operationClickHandle} className={styles["multiply"]}>
         *
       </button>
-      <button
-        onClick={operationClickHandle}
-        className={styles["minus"]}
-      >
+      <button onClick={operationClickHandle} className={styles["minus"]}>
         −
       </button>
-      <button
-        onClick={operationClickHandle}
-        className={styles["plus"]}
-      >
+      <button onClick={operationClickHandle} className={styles["plus"]}>
         +
       </button>
-      <button
-        onClick={operationClickHandle}
-        className={styles["root"]}
-      >
+      <button onClick={operationClickHandle} className={styles["root"]}>
         √
       </button>
-      <button
-        onClick={operationClickHandle}
-        className={styles["remainder"]}
-      >
+      <button onClick={operationClickHandle} className={styles["remainder"]}>
         %
       </button>
-      <button
-        onClick={operationClickHandle}
-        className={styles["reciprocal"]}
-      >
+      <button onClick={operationClickHandle} className={styles["reciprocal"]}>
         1/x
       </button>
       <button onClick={calculate} className={styles["result"]}>

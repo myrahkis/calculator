@@ -1,14 +1,14 @@
 import AppLayout from "./components/AppLayout";
 import styles from "./app.module.css";
-import { ButtonsProvider } from "./context/ButtonsContext";
+import { CalculatorProvider } from "./context/CalculatorContext";
 
 function App() {
   return (
-    <ButtonsProvider>
+    <CalculatorProvider>
       <div className={styles["container"]}>
         <AppLayout />
       </div>
-    </ButtonsProvider>
+    </CalculatorProvider>
   );
 }
 
