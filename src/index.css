@@ -25,3 +25,18 @@ body {
   background-color: var(--main-color);
   color: var(--lightest-color);
 }
+
+button {
+  cursor: pointer;
+  background-color: var(--lightest-color);
+  border: none;
+  border-radius: 1rem;
+}
+button:hover {
+  transform: scale(0.96);
+  transition: transform 0.25s ease-in-out;
+}
+
+.grid-cell {
+
+}
