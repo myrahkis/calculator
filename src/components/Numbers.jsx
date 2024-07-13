@@ -1,24 +1,29 @@
-import styles from './numbers.module.css';
+import { useButtons } from "../context/ButtonsContext";
+import styles from "./numbers.module.css";
 
 function Numbers() {
-    return (
-      <div className={styles['numbers-btns']}>
-        <button>←</button>
-        <button>CE</button>
-        <button>C</button>
-        <button>7</button>
-        <button>8</button>
-        <button>9</button>
-        <button>4</button>
-        <button>5</button>
-        <button>6</button>
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        <button className={styles['zero']}>0</button>
-        <button>.</button>
-      </div>
-    );
-  }
-  
-  export default Numbers;
+  const { numberClickHandle, deleteHandle, clearHandle, сlearEntryHandle } =
+    useButtons();
+  return (
+    <div className={styles["numbers-btns"]}>
+      <button onClick={deleteHandle}>←</button>
+      <button onClick={сlearEntryHandle}>CE</button>
+      <button onClick={clearHandle}>C</button>
+      <button onClick={numberClickHandle}>7</button>
+      <button onClick={numberClickHandle}>8</button>
+      <button onClick={numberClickHandle}>9</button>
+      <button onClick={numberClickHandle}>4</button>
+      <button onClick={numberClickHandle}>5</button>
+      <button onClick={numberClickHandle}>6</button>
+      <button onClick={numberClickHandle}>1</button>
+      <button onClick={numberClickHandle}>2</button>
+      <button onClick={numberClickHandle}>3</button>
+      <button className={styles["zero"]} onClick={numberClickHandle}>
+        0
+      </button>
+      <button>.</button>
+    </div>
+  );
+}
+
+export default Numbers;
