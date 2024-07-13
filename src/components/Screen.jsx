@@ -1,15 +1,17 @@
 import styles from "./screen.module.css";
+import timeSvg from "../assets/time-svgrepo.svg";
 
 function Screen() {
   return (
     <div className={styles["container"]}>
       <div className={styles["screen-wrapper"]}>
-        <p>Отображение вычислений</p>
-        <p>Отображение предварительного результата</p>
-      </div>
-      <div className={styles["btns-wrapper"]}>
-        <p>Кнопка с историей</p>
-        <p>Кнопка очистить</p>
+        <p className={styles['calculations']}>N + N</p>
+        <div className={styles["info-wrapper"]}>
+          <p>2N</p>
+          <button>
+            <img src={timeSvg} alt="history" />
+          </button>
+        </div>
       </div>
       <hr />
     </div>
