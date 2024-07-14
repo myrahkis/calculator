@@ -3,14 +3,14 @@ import timeSvg from "../assets/time-svgrepo.svg";
 import { useCalculator } from "../context/CalculatorContext";
 
 function Screen() {
-  const { result, history, selectedNum } = useCalculator();
+  const { history, isOperatorSelected, nextNum, selectedNum } = useCalculator();
 
   return (
     <div className={styles["container"]}>
       <div className={styles["screen-wrapper"]}>
         <p className={styles["calculations"]}>{history}</p>
         <div className={styles["info-wrapper"]}>
-          <p>{selectedNum ? selectedNum : result}</p>
+          <p>{isOperatorSelected ? nextNum : selectedNum}</p>
           {/* <button>
             <img src={timeSvg} alt="history" />
           </button> */}

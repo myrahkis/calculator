@@ -6,10 +6,10 @@ import { createContext } from "react";
 const CalculatorContext = createContext();
 
 function CalculatorProvider({ children }) {
-  const [result, setResult] = useState("0");
+  const [result, setResult] = useState("");
   const [history, setHistory] = useState("");
-  const [selectedNum, setSelectedNum] = useState("");
-  const [nextNum, setNextNum] = useState("");
+  const [selectedNum, setSelectedNum] = useState("0");
+  const [nextNum, setNextNum] = useState("0");
   const [selectedOperator, setSelectedOperator] = useState(""); // сделать стиль для выделения выбранного
   const [isOperatorSelected, setIsOperatorSelected] = useState(false);
 
@@ -20,6 +20,7 @@ function CalculatorProvider({ children }) {
 
   function clearHandle() {
     setResult("0");
+    // setResult("0");
     setSelectedNum("");
     setNextNum("");
     setHistory("");
@@ -35,13 +36,13 @@ function CalculatorProvider({ children }) {
   }
 
   function numberClickHandle(e) {
-    const val = +e.target.innerHTML;
+    const val = e.target.innerHTML;
 
     if (selectedOperator !== "") {
-      setNextNum((num) => num + val);
+      setNextNum((num) => (num === "0" ? val : num + val));
       setHistory((his) => his + val);
     } else {
-      setSelectedNum((num) => num + val);
+      setSelectedNum((num) => (num === "0" ? val : num + val));
       setHistory((his) => his + val);
     }
   }
@@ -52,59 +53,70 @@ function CalculatorProvider({ children }) {
     setSelectedOperator(oper);
     setIsOperatorSelected(true);
 
-    setHistory((his) => his + oper);
+    setHistory((his) =>
+      !isOperatorSelected ? his + oper : his.slice(0, -1) + oper
+    );
   }
 
-  function newOperation() {
+  function newOperation(val) {
+    setResult(val);
+    setSelectedNum(val);
+    setHistory(val);
     setSelectedOperator("");
     setIsOperatorSelected(false);
-    setSelectedNum("");
     setNextNum("");
-    setHistory("");
   }
 
   function calculate() {
     switch (selectedOperator) {
-      case "+":
-        setResult(+selectedNum + +nextNum);
-        newOperation();
+      case "+": {
+        const val = +selectedNum + +nextNum;
+        newOperation(val);
         break;
-      case "−":
-        setResult(+selectedNum - +nextNum);
-        newOperation();
+      }
+      case "−": {
+        const val = +selectedNum - +nextNum;
+        newOperation(val);
         break;
-      case "*":
-        setResult(+selectedNum * +nextNum);
-        newOperation();
+      }
+      case "*": {
+        const val = +selectedNum * +nextNum;
+        newOperation(val);
         break;
-      case "/":
-        setResult(+selectedNum / +nextNum);
-        newOperation();
+      }
+      case "/": {
+        const val = +selectedNum / +nextNum;
+        newOperation(val);
         break;
-      case "%":
-        setResult(+selectedNum % +nextNum);
-        newOperation();
+      }
+      case "%": {
+        const val = +selectedNum % +nextNum;
+        newOperation(val);
         break;
-      case "√":
-        setResult(Math.sqrt(+selectedNum));
-        newOperation();
+      }
+      case "√": {
+        const val = Math.sqrt(+selectedNum);
+        newOperation(val);
         break;
-      case "±":
-        setResult(Math.abs(+selectedNum) * -1);
-        newOperation();
+      }
+      case "±": {
+        const val = Math.abs(+selectedNum) * -1;
+        newOperation(val);
         break;
-      case "1/x":
-        setResult(1 / +selectedNum);
-        newOperation();
+      }
+      case "(1/x)": {
+        const val = 1 / +selectedNum;
+        newOperation(val);
         break;
+      }
     }
   }
 
   return (
     <CalculatorContext.Provider
       value={{
-        result,
         history,
+        nextNum,
         selectedNum,
         isOperatorSelected,
         сlearEntryHandle,
@@ -124,7 +136,9 @@ function useCalculator() {
   const context = useContext(CalculatorContext);
 
   if (context === undefined)
-    throw new Error("CalculatorContext был исп за пределами CalculatorProvider!");
+    throw new Error(
+      "CalculatorContext был исп за пределами CalculatorProvider!"
+    );
 
   return context;
 }

@@ -22,7 +22,7 @@ function Numbers() {
       <button className={styles["zero"]} onClick={numberClickHandle}>
         0
       </button>
-      <button>.</button>
+      <button onClick={numberClickHandle}>.</button>
     </div>
   );
 }

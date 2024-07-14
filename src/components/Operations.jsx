@@ -28,7 +28,7 @@ function Operations() {
         %
       </button>
       <button onClick={operationClickHandle} className={styles["reciprocal"]}>
-        1/x
+        (1/x)
       </button>
       <button onClick={calculate} className={styles["result"]}>
         =
