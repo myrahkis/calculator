@@ -11,5 +11,8 @@
 .zero {
   grid-column: -4 / -2;
   grid-row: 5 / 6;
-  background-color: brown;
+}
+
+.clear-all {
+  color: var(--danger-color);
 }

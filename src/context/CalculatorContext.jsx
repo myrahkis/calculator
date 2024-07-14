@@ -14,15 +14,15 @@ function CalculatorProvider({ children }) {
   const [isOperatorSelected, setIsOperatorSelected] = useState(false);
 
   function сlearEntryHandle() {
-    setSelectedNum("");
-    setNextNum("");
+    setSelectedNum("0");
+    setNextNum("0");
   }
 
   function clearHandle() {
     setResult("0");
     // setResult("0");
-    setSelectedNum("");
-    setNextNum("");
+    setSelectedNum("0");
+    setNextNum("0");
     setHistory("");
     setSelectedOperator("");
     setIsOperatorSelected(false);
@@ -64,7 +64,7 @@ function CalculatorProvider({ children }) {
     setHistory(val);
     setSelectedOperator("");
     setIsOperatorSelected(false);
-    setNextNum("");
+    setNextNum("0");
   }
 
   function calculate() {

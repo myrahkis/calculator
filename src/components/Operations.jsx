@@ -10,25 +10,25 @@ function Operations() {
         ±
       </button>
       <button onClick={operationClickHandle} className={styles["divide"]}>
-        /
-      </button>
-      <button onClick={operationClickHandle} className={styles["multiply"]}>
-        *
-      </button>
-      <button onClick={operationClickHandle} className={styles["minus"]}>
-        −
-      </button>
-      <button onClick={operationClickHandle} className={styles["plus"]}>
-        +
-      </button>
-      <button onClick={operationClickHandle} className={styles["root"]}>
         √
       </button>
-      <button onClick={operationClickHandle} className={styles["remainder"]}>
+      <button onClick={operationClickHandle} className={styles["multiply"]}>
+        /
+      </button>
+      <button onClick={operationClickHandle} className={styles["minus"]}>
         %
       </button>
-      <button onClick={operationClickHandle} className={styles["reciprocal"]}>
+      <button onClick={operationClickHandle} className={styles["plus"]}>
+        *
+      </button>
+      <button onClick={operationClickHandle} className={styles["root"]}>
         (1/x)
+      </button>
+      <button onClick={operationClickHandle} className={styles["remainder"]}>
+        −
+      </button>
+      <button onClick={operationClickHandle} className={styles["reciprocal"]}>
+        +
       </button>
       <button onClick={calculate} className={styles["result"]}>
         =

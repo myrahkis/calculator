@@ -11,5 +11,5 @@
 .result {
   grid-column: 2 / -1;
   grid-row: 4 / 6;
-  background-color: brown;
+  background-color: var(--emphasis-color);
 }

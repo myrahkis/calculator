@@ -7,9 +7,9 @@ function Numbers() {
 
   return (
     <div className={styles["numbers-btns"]}>
-      <button onClick={deleteHandle}>←</button>
+      <button onClick={clearHandle} className={styles['clear-all']}><strong>C</strong></button>
       <button onClick={сlearEntryHandle}>CE</button>
-      <button onClick={clearHandle}>C</button>
+      <button onClick={deleteHandle}>←</button>
       <button onClick={numberClickHandle}>7</button>
       <button onClick={numberClickHandle}>8</button>
       <button onClick={numberClickHandle}>9</button>

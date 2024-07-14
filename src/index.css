@@ -5,10 +5,11 @@
 }
 
 :root {
-  --lightest-color: #f2fcf2;
-  --main-color: #16722f;
-  --emphasis-color: #9999cc;
-  --just-in-case-color: #749a76;
+  --lightest-color: #c2f9ff;
+  --main-color: #024d5e;
+  --emphasis-color: #f79235;
+  --danger-color: #e72448;
+  --just-in-case-color: #0d586a;
 }
 
 html {
@@ -37,6 +38,6 @@ button:hover {
   transition: transform 0.16s ease-in;
 }
 
-.grid-cell {
-
+hr {
+  color: var(--lightest-color);
 }
